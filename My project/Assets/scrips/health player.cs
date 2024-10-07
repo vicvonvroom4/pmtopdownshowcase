@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class NewBehaviourScript : MonoBehaviour
+public class PlayerHealth : MonoBehaviour
 {
     [SerializeField]
     int health = 10;
@@ -30,12 +30,13 @@ public class NewBehaviourScript : MonoBehaviour
     {
         Debug.Log(collision.gameObject.name);
         //IF we hit an enemy, reduce player health
-        if(collision.gameObject.name == "Enemy")
+        if(collision.gameObject.tag == "Enemy")
         {
-            health -= 1; 
+            health -= 1;
+            healthBar.fillAmount = health / maxHP;
             // add consenquences 
             // if health gets too low, relod the current level 
-            if(health <=  0)
+            if (health <=  0)
             {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
                // SceneManager.LoadScene(leveltoload)

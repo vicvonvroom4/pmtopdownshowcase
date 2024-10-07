@@ -6,10 +6,10 @@ public class bulletpath : MonoBehaviour
 {
     [SerializeField]
     GameObject prefab;
-    float bulletSpeed = 10f;
+    float bulletSpeed = 20f;
     [SerializeField]
     float bulletLifetime = 2.0f;
-    float shootDelay = 0;
+    float shootDelay = 1;
     // Start is called before the first frame update
     void Start()
     {
